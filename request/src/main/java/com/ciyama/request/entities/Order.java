@@ -17,6 +17,7 @@ import javax.persistence.Table;
 
 import com.ciyama.request.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_order")
@@ -85,6 +86,7 @@ public class Order implements Serializable {
 		this.client = client;
 	}
 	
+	@JsonIgnore
 	public Set<OrderItem> getItems() {
 		return items;
 	}
